@@ -49,6 +49,7 @@ def execute_task(
     try:
         _task, task_buffer = _unpack_messagebody(task_body)
         log.debug("executing task task_id='%s'", task_id)
+        result_size_limit: int = 10 * 1024 * 1024. # HACK: this is the endpoint uuid for some reason
         result = _call_user_function(task_buffer, result_size_limit=result_size_limit)
         log.debug("Execution completed without exception")
         result_message = dict(task_id=task_id, data=result)
