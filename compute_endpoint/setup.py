@@ -40,7 +40,7 @@ REQUIRES = [
     "setproctitle>=1.3.2",
     "pyyaml>=6.0",
     "jinja2>=3.1.3",
-    "jsonschema>=4.19.0",
+    "jsonschema",
     "cachetools>=5.3.1",
     "types-cachetools>=5.3.0.6",
 ]
