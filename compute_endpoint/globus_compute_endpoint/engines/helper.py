@@ -131,7 +131,7 @@ def _call_user_function(
     result_data = f(*args, **kwargs)
     serialized_data = serializer.serialize(result_data)
 
-    if len(serialized_data) > result_size_limit:
+    if len(serialized_data) > int(result_size_limit):
         raise MaxResultSizeExceeded(len(serialized_data), result_size_limit)
 
     return serialized_data
